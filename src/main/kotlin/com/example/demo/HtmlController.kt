@@ -11,15 +11,24 @@ class HtmlController {
 
     @RequestMapping("/")
     fun index(model:Model) : String {
+        model.addAttribute("title","Home")
         return "index"
     }
 
-    @GetMapping("/sign")
-    fun htmlForm(model: Model) : String {
-        return "sign"
-    }
-    @GetMapping("/login")
-    fun htmlForm2(model: Model) : String {
-        return "login"
+    @GetMapping("/{formType}")
+    fun htmlForm(model: Model, @PathVariable formType:String) : String {
+
+        var response : String=""
+
+        if (formType.equals("sign")) {
+            response="sign"
+        }
+        else if (formType.equals("login")) {
+            response="login"
+        }
+
+        model.addAttribute("title", response)
+
+        return response
     }
 }
