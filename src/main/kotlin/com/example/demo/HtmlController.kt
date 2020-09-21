@@ -18,4 +18,8 @@ class HtmlController {
     fun htmlForm(model: Model) : String {
         return "sign"
     }
+    @GetMapping("/login")
+    fun htmlForm2(model: Model) : String {
+        return "login"
+    }
 }
