@@ -1,12 +1,22 @@
 {{> header }}
-<h1>login</h1>
-<form action="/login" method="post">
-    id: <br/>
-    <input name="id" type="text"/>
-    <br/>
-    password: <br/>
-    <input name="password" type="password"/><br/>
-    <input type="submit" value="login">
-</form>
+{{> navbar }}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Login</h5>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="exampleInputEmail1">ID:</label>
+                <input name="id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password:</label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-secondary">login</button>
+        </form>
+    </div>
+</div>
 
 {{> footer }}
